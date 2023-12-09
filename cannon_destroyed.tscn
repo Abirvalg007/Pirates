@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxs8r8yiac8al"]
+
+[ext_resource type="Texture2D" uid="uid://b5mcxn8ajyu72" path="res://resources/kenney_pirate-pack/PNG/Default size/cannonMobile_destoyed.png" id="1_cmrc6"]
+
+[node name="cannon_destroyed" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_cmrc6")

@@ -1,0 +1,132 @@
+[gd_scene load_steps=18 format=3 uid="uid://d20rq5acuc2af"]
+
+[ext_resource type="Script" path="res://Ship.gd" id="1_131s4"]
+[ext_resource type="Texture2D" uid="uid://0meaffmqjwt2" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/hullLarge (1).png" id="1_gbk7t"]
+[ext_resource type="Texture2D" uid="uid://c1385kb5s0ryg" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/sailLarge (2).png" id="2_hu34q"]
+[ext_resource type="PackedScene" uid="uid://ch700yr1cfbbw" path="res://cannon1.tscn" id="3_83ag0"]
+[ext_resource type="Texture2D" uid="uid://na2nx6b1vrpy" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/sailSmall (2).png" id="3_lwvav"]
+[ext_resource type="Texture2D" uid="uid://dtakdxahsu33r" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/hullLarge (2).png" id="3_yn85r"]
+[ext_resource type="Texture2D" uid="uid://rvku2ocjyf60" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/nest.png" id="4_etwyg"]
+[ext_resource type="Texture2D" uid="uid://dd33k1f8xnb0h" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/hullLarge (3).png" id="4_y1vtm"]
+[ext_resource type="Texture2D" uid="uid://eds5gc5uesgh" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/flag (2).png" id="5_mkdx8"]
+[ext_resource type="Texture2D" uid="uid://c7pikmn7kcvhd" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/hullLarge (4).png" id="5_oq143"]
+[ext_resource type="Texture2D" uid="uid://c87sa3lgxcb1h" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/sailLarge (8).png" id="11_ndym8"]
+[ext_resource type="Texture2D" uid="uid://dqumckiqkx52b" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/sailLarge (20).png" id="12_wq5qe"]
+[ext_resource type="Texture2D" uid="uid://c3p62wrdsomc1" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/sailLarge (14).png" id="13_most1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyf0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gbk7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yn85r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y1vtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oq143")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yxd6d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lwvav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80cbn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ndym8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hu34q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wq5qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_most1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7k8uv"]
+radius = 20.0
+height = 90.0
+
+[node name="Ship" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_131s4")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_yyf0f")
+
+[node name="Cannon8" parent="Node2D" groups=["ship_cannons"] instance=ExtResource("3_83ag0")]
+position = Vector2(3, -16)
+rotation = -1.57079
+
+[node name="Cannon9" parent="Node2D" groups=["ship_cannons"] instance=ExtResource("3_83ag0")]
+position = Vector2(-16, -16)
+rotation = -1.57079
+
+[node name="Cannon6" parent="Node2D" groups=["ship_cannons"] instance=ExtResource("3_83ag0")]
+position = Vector2(2, 17)
+rotation = 1.57079
+
+[node name="Cannon7" parent="Node2D" groups=["ship_cannons"] instance=ExtResource("3_83ag0")]
+position = Vector2(-16, 17)
+rotation = 1.57079
+
+[node name="SailSmall" type="AnimatedSprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(31, -1)
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_yxd6d")
+
+[node name="Nest" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(-26, 0.000148773)
+rotation = -1.5708
+texture = ExtResource("4_etwyg")
+
+[node name="Flag" type="Sprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(-37, 0.000148773)
+rotation = -1.5708
+texture = ExtResource("5_mkdx8")
+
+[node name="SailLarge" type="AnimatedSprite2D" parent="Node2D"]
+texture_filter = 1
+position = Vector2(-18, 0)
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_80cbn")
+offset = Vector2(0, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 0)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_7k8uv")
+
+[node name="Timer_dmg" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer_dmg" to="." method="_on_timer_dmg_timeout"]

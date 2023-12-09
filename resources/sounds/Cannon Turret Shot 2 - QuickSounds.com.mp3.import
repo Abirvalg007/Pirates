@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvj48db54mf8b"
+path="res://.godot/imported/Cannon Turret Shot 2 - QuickSounds.com.mp3-2c0c457bcd6fae10fd130ea65e1ab7f7.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/Cannon Turret Shot 2 - QuickSounds.com.mp3"
+dest_files=["res://.godot/imported/Cannon Turret Shot 2 - QuickSounds.com.mp3-2c0c457bcd6fae10fd130ea65e1ab7f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

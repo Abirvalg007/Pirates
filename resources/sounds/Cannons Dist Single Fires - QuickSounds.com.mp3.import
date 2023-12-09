@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ftripe0vngeq"
+path="res://.godot/imported/Cannons Dist Single Fires - QuickSounds.com.mp3-0f110c27ea00d44b44b3f2429ac20f44.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/Cannons Dist Single Fires - QuickSounds.com.mp3"
+dest_files=["res://.godot/imported/Cannons Dist Single Fires - QuickSounds.com.mp3-0f110c27ea00d44b44b3f2429ac20f44.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

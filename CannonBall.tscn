@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc6abc2or1x8r"]
+
+[ext_resource type="Texture2D" uid="uid://dkcgqii30nhwj" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/cannonBall.png" id="1_62e7r"]
+[ext_resource type="Script" path="res://CannonBall.gd" id="1_i5krl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tqge4"]
+radius = 4.0
+
+[node name="CannonBall" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 28
+script = ExtResource("1_i5krl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_62e7r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tqge4")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

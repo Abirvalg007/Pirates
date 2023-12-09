@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mrahf02m4hyq"
+path="res://.godot/imported/Cannons Large Single Fire Fuse 2 - QuickSounds.com.mp3-5202681c90467e179529d67df615ca7b.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/Cannons Large Single Fire Fuse 2 - QuickSounds.com.mp3"
+dest_files=["res://.godot/imported/Cannons Large Single Fire Fuse 2 - QuickSounds.com.mp3-5202681c90467e179529d67df615ca7b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

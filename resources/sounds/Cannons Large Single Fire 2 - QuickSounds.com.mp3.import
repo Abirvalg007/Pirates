@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cb7g8jju4cqph"
+path="res://.godot/imported/Cannons Large Single Fire 2 - QuickSounds.com.mp3-b81b9db34801ec41d8a9a4d267c3daa2.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/Cannons Large Single Fire 2 - QuickSounds.com.mp3"
+dest_files=["res://.godot/imported/Cannons Large Single Fire 2 - QuickSounds.com.mp3-b81b9db34801ec41d8a9a4d267c3daa2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

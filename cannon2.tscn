@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c74x67lbrk4o1"]
+
+[ext_resource type="Texture2D" uid="uid://daa6nt8voha8r" path="res://resources/kenney_pirate-pack/PNG/Default size/Ship parts/cannonMobile.png" id="1_06gpq"]
+[ext_resource type="Script" path="res://cannon2.gd" id="1_svmim"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2bkq"]
+radius = 331.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nplx2"]
+size = Vector2(20, 13)
+
+[node name="cannon2" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_svmim")
+
+[node name="detect_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_area"]
+shape = SubResource("CircleShape2D_e2bkq")
+debug_color = Color(0, 0, 100, 0)
+
+[node name="Timer_Shoot" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_06gpq")
+
+[node name="Timer_reload" type="Timer" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = -1.5708
+target_position = Vector2(-1.00197, 545)
+collision_mask = 28
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_nplx2")
+
+[connection signal="body_entered" from="detect_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="detect_area" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer_Shoot" to="." method="_on_timer_shoot_timeout"]
+[connection signal="timeout" from="Timer_reload" to="." method="_on_timer_reload_timeout"]
